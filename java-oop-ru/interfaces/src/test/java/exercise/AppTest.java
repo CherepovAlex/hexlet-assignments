@@ -1,5 +1,6 @@
 package exercise;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import static org.assertj.core.api.Assertions.assertThat;
 import java.util.ArrayList;
@@ -57,6 +58,26 @@ class AppTest {
     }
 
     // BEGIN
-    
+    CharSequence text = new ReversedSequence("abcdef");
+    @Test
+    void testReversedSequence1(){
+        String result = text.toString();
+        assertThat(result).isEqualTo("fedcba");
+    }
+    @Test
+    void testReversedSequence2(){
+        char result = text.charAt(1);
+        assertThat(result).isEqualTo('e');
+    }
+    @Test
+    void testReversedSequence3(){
+        int result = text.length();
+        assertThat(result).isEqualTo(6);
+    }
+    @Test
+    void testReversedSequence4(){
+        String result = text.toString().substring(1, 4);
+        assertThat(result).isEqualTo("edc");
+    }
     // END
 }

@@ -1,14 +1,19 @@
 package exercise;
 
+import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
 // BEGIN
 public class App {
 
-    public static Lsit<String> buildApartmentsList(List<Home> apartments, int number) {
-        //TODO Метод сортирует объекты по площади по возрастанию
-
+    public static List<String> buildApartmentsList(List<Home> apartments, int number) {
+        return apartments.stream()
+                .sorted(Comparator.comparing(Home::getArea))
+                .limit(number)
+                .map(Home::toString)
+                .collect(Collectors.toList());
     }
 
     public static void main(String[] args) {
@@ -17,7 +22,7 @@ public class App {
         flat.toString(); // "Квартира площадью 58.5 метров на 3 этаже"
 
         Home cottage = new Cottage(135, 2);
-        double area = cottage.getArea(); // 135
+        double area1 = cottage.getArea(); // 135
         cottage.toString(); // "2 этажный коттедж площадью 135 метров"
 
         List<Home> apartments = new ArrayList<>(List.of(
@@ -28,7 +33,9 @@ public class App {
         ));
 
         List<String> result = App.buildApartmentsList(apartments, 3);
-        System.out.println(result); // =>
+        System.out.println(result);
+
+        // =>
 // [
 //     Квартира площадью 44.0 метров на 10 этаже,
 //     Квартира площадью 90.0 метров на 2 этаже,
@@ -36,11 +43,10 @@ public class App {
 // ]
 
         CharSequence text = new ReversedSequence("abcdef");
-        text.toString(); // "fedcba"
-        text.charAt(1); // 'e'
-        text.length(); // 6
-        text.subSequence(1, 4).toString(); // "edc"
-
+        System.out.println(text.toString()); // "fedcba"
+        System.out.println(text.charAt(1)); // 'e'
+        System.out.println(text.length()); // 6
+        System.out.println(text.subSequence(1, 4).toString()); // "edc"
     }
 }
 // END
