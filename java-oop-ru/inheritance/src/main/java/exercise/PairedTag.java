@@ -23,7 +23,7 @@ class PairedTag extends SingleTag {
                 alTag.stream().map(tag -> "<" + tag.getTag() + " " + tag.getMap()
                                 .entrySet().stream()
                                 .map(entry -> entry.getKey() + "=\"" + entry.getValue() + "\"")
-                                .collect(Collectors.joining(" ")))
+                                .collect(Collectors.joining(" "))+ '>')
                         .collect(Collectors.joining())
                 + this.body + "</" + getTag() + '>';
     }

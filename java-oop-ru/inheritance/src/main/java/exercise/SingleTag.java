@@ -18,9 +18,9 @@ class SingleTag extends Tag {
 
     @Override
     public String toString() {
-        return "<" + getTag() + " " + map.entrySet().stream()
-                .map(entry -> entry.getKey() + "=\"" + entry.getValue() + "\"")
-                .collect(Collectors.joining(" "))
+        return "<" + getTag() + map.entrySet().stream()
+                .map(entry -> " " + entry.getKey() + "=\"" + entry.getValue() + "\"")
+                .collect(Collectors.joining())
                 + '>';
     }
 }
