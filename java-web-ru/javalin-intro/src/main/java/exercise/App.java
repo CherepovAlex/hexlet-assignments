@@ -8,6 +8,7 @@ public final class App {
 
     public static Javalin getApp() {
         // BEGIN
+
         var app =  Javalin.create(config -> {
             config.bundledPlugins.enableDevLogging();
         });
