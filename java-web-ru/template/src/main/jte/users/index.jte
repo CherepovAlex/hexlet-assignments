@@ -12,7 +12,7 @@
         </tr>
     </thead>
     <tbody>
-        @for (user in page.getUsers())
+        @for (exercise.model.User user : page.getUsers())
             <tr>
                 <td>${user.getId()}</td>
                 <td>${user.getFirstName()} ${user.getLastName()}</td>
