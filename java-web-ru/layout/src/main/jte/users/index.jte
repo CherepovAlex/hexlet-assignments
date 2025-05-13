@@ -1,5 +1,5 @@
 @param exercise.dto.users.UsersPage page
-@template.exercise.layout.page(
+@template.layout.page(
     content = @`
         <h1 class="mb-4">Users List</h1>
         <table class="table table-striped">

@@ -1,4 +1,4 @@
-@template.exercise.layout.page(
+@template.layout.page(
     content = @`
         <div class="jumbotron">
             <h1 class="display-4">Welcome to User Manager!</h1>

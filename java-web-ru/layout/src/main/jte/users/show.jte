@@ -1,5 +1,5 @@
 @param exercise.dto.users.UserPage page
-@template.exerecise.layout.page(
+@template.layout.page(
     content = @`
         <div class="card">
             <div class="card-body">
