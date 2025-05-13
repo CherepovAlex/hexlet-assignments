@@ -7,7 +7,7 @@
             <p>Get started by viewing the list of users.</p>
             <a class="btn btn-primary btn-lg" href="/users" role="button">View Users</a>
         </div>
-    `
+    `,
     footer = @`
         <div class="container text-center">
             <p class="text-muted mb-0">© 2023 User Manager | Users Page</p>

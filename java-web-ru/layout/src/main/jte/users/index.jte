@@ -1,3 +1,4 @@
+@import exercise.model.User
 @param exercise.dto.users.UsersPage page
 @template.layout.page(
     content = @`
@@ -24,10 +25,10 @@
                 @endfor
             </tbody>
         </table>
-    `
+    `,
     footer = @`
         <div class="container text-center">
-            <p class="text-muted mb-0">© 2023 User Manager | Users Page</p>
+            <p class="text-muted mb-0">© 2025 User Manager | Users Page</p>
         </div>
     `
 )

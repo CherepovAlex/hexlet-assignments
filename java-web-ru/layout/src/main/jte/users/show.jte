@@ -20,7 +20,7 @@
                 <a href="/users" class="btn btn-primary">Back to Users</a>
             </div>
         </div>
-    `
+    `,
     footer = @`
         <div class="container text-center">
             <p class="text-muted mb-0">© 2023 User Manager | Users Page</p>

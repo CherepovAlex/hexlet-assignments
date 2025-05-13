@@ -1,4 +1,5 @@
-@params String content, String footer
+@param gg.jte.Content content
+@param gg.jte.Content footer
 
 <!DOCTYPE html>
 <html lang="en">
