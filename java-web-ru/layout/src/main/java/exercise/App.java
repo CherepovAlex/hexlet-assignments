@@ -23,9 +23,8 @@ public final class App {
 
     public static Javalin getApp() {
 
-        // Создаем TemplateEngine с указанием каталога шаблонов
         var templateEngine = TemplateEngine.create(
-                new DirectoryCodeResolver(Paths.get("src/main/jte")), // путь к jte-шаблонам
+                new DirectoryCodeResolver(Paths.get("src/main/jte")),
                 ContentType.Html
         );
 
