@@ -12,8 +12,8 @@
 @if(page.getErrors() != null && !page.getErrors().isEmpty())
     <div class="alert alert-danger">
         <ul>
-            @for(var validator : page.getErrors().values())
-                @for(var error : validator)
+            @for(var entry : page.getErrors().entrySet())
+                @for(var error : entry.getValue())
                     <li>${error.getMessage()}</li>
                 @endfor
             @endfor
