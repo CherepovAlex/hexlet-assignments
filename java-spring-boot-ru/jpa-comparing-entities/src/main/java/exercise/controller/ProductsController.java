@@ -1,6 +1,7 @@
 package exercise.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -10,6 +11,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.DeleteMapping;
 
+import java.net.URI;
 import java.util.List;
 
 import exercise.model.Product;
@@ -31,7 +33,7 @@ public class ProductsController {
 
     // BEGIN
     @PostMapping
-    public Product create(@RequestBody Product product) {
+    public ResponseEntity<Product> create(@RequestBody Product product) {
         List<Product> existinProducts = productRepository.findAll();
         boolean isDuble = existinProducts.stream()
                 .anyMatch(ex -> ex.equals(product));
@@ -40,7 +42,8 @@ public class ProductsController {
                     "Product with title" + product.getTitle()
                             + " and price " + product.getPrice() + "already exist");
         }
-        return productRepository.save(product);
+        Product newProduct = productRepository.save(product);
+        return ResponseEntity.created(URI.create("" + product.getId())).body(newProduct);
     }
     // END
 
