@@ -23,6 +23,6 @@ public class Product {
 
     private String title;
 
-    private String price;
+    private int price;
 }
 // END
