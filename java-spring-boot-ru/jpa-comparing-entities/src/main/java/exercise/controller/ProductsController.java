@@ -37,8 +37,8 @@ public class ProductsController {
                 .anyMatch(ex -> ex.equals(product));
         if (isDuble) {
             throw new ResourceAlreadyExistsException(
-                    "Product with title" + product.getTitle() +
-                            " and price " + product.getPrice() + "already exist");
+                    "Product with title" + product.getTitle()
+                            + " and price " + product.getPrice() + "already exist");
         }
         return productRepository.save(product);
     }
