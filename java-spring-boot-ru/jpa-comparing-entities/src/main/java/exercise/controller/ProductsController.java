@@ -9,8 +9,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.http.HttpStatus;
-import org.springframework.web.bind.annotation.ResponseStatus;
 
 import java.util.List;
 
@@ -38,8 +36,9 @@ public class ProductsController {
         boolean isDuble = existinProducts.stream()
                 .anyMatch(ex -> ex.equals(product));
         if (isDuble) {
-            throw new ResourceAlreadyExistsException("Product with title" + product.getTitle() +
-                    " and price " + product.getPrice() + "already exist");
+            throw new ResourceAlreadyExistsException(
+                    "Product with title" + product.getTitle() +
+                            " and price " + product.getPrice() + "already exist");
         }
         return productRepository.save(product);
     }
