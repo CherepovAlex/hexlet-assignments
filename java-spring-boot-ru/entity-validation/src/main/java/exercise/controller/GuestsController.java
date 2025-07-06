@@ -48,9 +48,9 @@ public class GuestsController {
     @PostMapping(path = "")
     @ResponseStatus(HttpStatus.CREATED)
     public GuestDTO create(@Valid @RequestBody GuestCreateDTO userData) {
-        var user = guestMapper.map(userData);
-        guestRepository.save(user);
-        return guestMapper.map(user);
+        var user = guestMapper.map(userData); // Преобразование DTO в модель
+        guestRepository.save(user);           // Сохранение в базу данных
+        return guestMapper.map(user);         // Возврат созданного гостя в виде DTO
     }
     // END
 }
